@@ -1,9 +1,10 @@
 sudo: false
 language: cpp
-matrix:
-  include:
-    - os: linux
-      compiler: g++-4.8
+gcc:
+  - 4.8
+  - 4.9
+env:
+  - SUITE=DGLM_TEST_ENABLE_CXX_98=ON
+  - SUITE=DGLM_TEST_ENABLE_CXX_0X=ON
 
-
-script: gcc -v;mkdir ./build; cd ./build; cmake -DGLM_TEST_ENABLE=ON -DGLM_TEST_ENABLE_CXX_98=ON ..; cmake --build .; ctest      
+script: $CXX -v;mkdir ./build; cd ./build; cmake -DGLM_TEST_ENABLE=ON $SUITE ..; cmake --build .; ctest
