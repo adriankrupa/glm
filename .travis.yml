@@ -1,8 +1,8 @@
 sudo: false
 language: cpp
-gcc:
-  - 4.8
-  - 4.9
+compiler:
+  - gcc-4.8
+  - clang-3.4
 env:
   - SUITE=DGLM_TEST_ENABLE_CXX_98=ON
   - SUITE=DGLM_TEST_ENABLE_CXX_0X=ON
