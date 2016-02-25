@@ -15,4 +15,4 @@ env:
   - SUITE=DGLM_TEST_ENABLE_CXX_98=ON
   - SUITE=DGLM_TEST_ENABLE_CXX_0X=ON
 
-script: mkdir ./build; cd ./build; cmake -DGLM_TEST_ENABLE=ON $SUITE ..; cmake --build .; ctest
+script: gcc --version; mkdir ./build; cd ./build; cmake -DGLM_TEST_ENABLE=ON $SUITE ..; cmake --build .; ctest
